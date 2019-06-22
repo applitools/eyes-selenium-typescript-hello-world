@@ -18,8 +18,11 @@ const eyes_selenium_1 = require("eyes.selenium");
         .build();
     // Initialize the eyes SDK and set your private API key.
     const eyes = new eyes_selenium_1.Eyes();
-    // eyes.setApiKey('YOUR API KEY');
     eyes.setLogHandler(new eyes_selenium_1.ConsoleLogHandler(false));
+    // Use env variable APPLITOOLS_API_KEY to send the api key or call next method
+    // eyes.setApiKey('XXXX')
+    // Set the server url in case is needed
+    // eyes.setServerUrl('https://eshopworldeyes....')
     try {
         // Start the test and set the browser's viewport size to 800x600.
         yield eyes.open(driver, 'Hello World!', 'My first Javascript test!', { width: 800, height: 600 });

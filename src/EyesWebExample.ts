@@ -11,8 +11,13 @@ import {Eyes, ConsoleLogHandler} from 'eyes.selenium';
     // Initialize the eyes SDK and set your private API key.
     const eyes : Eyes = new Eyes();
 
-    // eyes.setApiKey('YOUR API KEY');
     eyes.setLogHandler(new ConsoleLogHandler(false));
+
+    // Use env variable APPLITOOLS_API_KEY to send the api key or call next method
+    // eyes.setApiKey('XXXX')
+
+    // Set the server url in case is needed
+    // eyes.setServerUrl('https://eshopworldeyes....')
 
     try {
         // Start the test and set the browser's viewport size to 800x600.
